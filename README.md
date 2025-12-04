@@ -225,22 +225,21 @@ http://localhost/perpustakaankita/index.php
 ### Halaman Login
 
 <p align="center">
-  <img width="839" height="613" alt="Login Screenshot"
-       src="https://github.com/user-attachments/assets/877185e0-25d3-48b3-b1c0-9c8126dd4eeb" />
+  <img width="839" height="613" alt="Screenshot 2025-12-04 093146" src="https://github.com/user-attachments/assets/a9410cf7-a181-4895-b1d4-c01e5ef0e95f" />
 </p>
 
 ### Dashboard Admin
 
 <p align="center">
-  <img width="1917" height="762" alt="Dashboard Screenshot"
-       src="https://github.com/user-attachments/assets/834d4252-9771-448d-9c78-816cb72900cb" />
+<img width="1917" height="762" alt="Screenshot 2025-12-04 093222" src="https://github.com/user-attachments/assets/4efe2e0c-ebe5-44e5-b576-93abb529db35" />
+
 </p>
 
 ### Kelola Anggota
 
 <p align="center">
-  <img width="1909" height="784" alt="Books Screenshot"
-       src="https://github.com/user-attachments/assets/53725d7a-cdfa-4b45-9a80-2390b91ca0b4" />
+<img width="1909" height="784" alt="Screenshot 2025-12-04 093332" src="https://github.com/user-attachments/assets/b9fb64a5-b2c3-44e9-83e8-a5b80327bed5" />
+
 </p>
 
 
