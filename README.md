@@ -1,168 +1,222 @@
-=======
-# 🚀 Final Project RPL — WeddingLink
+# 🚀 Final Project RPL — Perpustakaan Kita
 
 <p align="center">
-  <img src="assets/banner.jpg" alt="WeddingLink Banner" width="100%">
+<img width="1583" height="731" alt="Screenshot 2025-12-02 141453" src="https://github.com/user-attachments/assets/eeecb618-14b5-4568-95ac-3a7c293785c3" />
 </p>
 
 <p align="center">
-  <img alt="WeddingLink" src="https://img.shields.io/badge/WeddingLink-Platform%20Pernikahan-blue" />
+  <img alt="Perpustakaan Kita" src="https://img.shields.io/badge/PerpustakaanKita-Web%20App-blue" />
   <img alt="PHP" src="https://img.shields.io/badge/PHP-8.2%2B-777BB4" />
   <img alt="MySQL" src="https://img.shields.io/badge/MySQL-Database-4479A1" />
   <img alt="Bootstrap" src="https://img.shields.io/badge/Bootstrap-5.3-7952B3" />
   <img alt="License" src="https://img.shields.io/badge/License-MIT-green" />
 </p>
+
 ---
 
 ## 👥 Identitas Kelompok
-- *Nama Kelompok :* 9
-- *Anggota & Jobdesk :*
-  | Nama Anggota | Tugas / Jobdesk |
-  |--------------|-----------------|
-  | [Nadhif Pandya Supriyadi (701230024)] | Requirement Gathering, SRS |
-  | [Novi Astina Wijayanti (701230088)] | Design (UML, UI) |
-  | [Dewi Lupiani (701230054)] | Implementasi Backend |
+- **Nama Kelompok :** 11
+- **Anggota & Jobdesk :**
 
+| Nama Anggota | Tugas / Jobdesk |
+|--------------|-----------------|
+| M. Nafiz (701230083) | Backend, Product Backlog, Dokumentasi |
+| Salsabila Aprilla Fathan (701230087) | UI/UX, UML, Frontend |
+
+**Nama Proyek :** Perpustakaan Kita  
+**Product Owner :** Team 9
 
 ---
 
 ## 📱 Deskripsi Singkat Aplikasi
 
-WeddingLink adalah platform web yang menghubungkan calon pengantin dengan penyedia jasa pernikahan. Aplikasi ini memfasilitasi proses pencarian, pemesanan, dan pembayaran berbagai jasa pernikahan seperti fotografi, dekorasi, catering, dan makeup dalam satu sistem terintegrasi.
+**Perpustakaan Kita** merupakan aplikasi web perpustakaan sekolah yang dirancang untuk memudahkan pengelolaan buku, pencarian, peminjaman, pengembalian, notifikasi, dan laporan bulanan.  
+Sistem digunakan oleh **Siswa**, **Perpustakawan**, dan **Admin**.
 
 ---
 
 ## 🎯 Tujuan Sistem / Permasalahan yang Diselesaikan
 
-*Permasalahan:*
+### *Permasalahan:*
+1. Pencarian buku masih manual & tidak efisien  
+2. Pengelolaan buku tidak up-to-date  
+3. Data peminjaman & pengembalian tidak tercatat dengan baik  
+4. Tidak ada notifikasi jatuh tempo  
+5. Pembuatan laporan bulanan masih manual  
+6. Anggota tidak dikelola dengan sistematis  
+7. Belum ada pencatatan & verifikasi denda
 
-1. Kesulitan mencari vendor pernikahan yang terpercaya
-2. Proses booking yang manual dan tidak terpusat
-3. Sulitnya membandingkan harga dan paket dari berbagai vendor
-4. Tidak adanya sistem pembayaran dan tracking yang terintegrasi
+### *Solusi yang Ditawarkan:*
+1. Sistem pencarian buku berbasis web  
+2. Peminjaman & pengembalian digital lengkap  
+3. CRUD buku untuk perpustakawan  
+4. Notifikasi email jatuh tempo  
+5. Laporan bulan dapat dicetak (PDF)  
+6. Admin dapat mengelola data anggota  
+7. Sistem denda & verifikasi pembayaran  
 
-*Solusi yang Ditawarkan:*
+---
 
-1. Marketplace terpusat untuk semua vendor pernikahan
-2. Sistem booking online dengan konfirmasi real-time
-3. Perbandingan harga dan paket dalam satu platform
-4. Sistem pembayaran terintegrasi dengan tracking status
+## 📦 Product Backlog (Ringkasan)
+
+| ID | User Story | Prioritas | Estimasi | Sprint |
+|----|------------|-----------|----------|--------|
+| US001 | Siswa mendaftar akun | 🔥 Sangat Tinggi | 8 | 1 |
+| US002 | Login siswa | 🔥 Sangat Tinggi | 8 | 1 |
+| US003 | Pencarian buku | Sedang | 3 | 1 |
+| US004 | Peminjaman buku | Tinggi | 5 | 2 |
+| US006 | Kelola data buku | 🔥 Sangat Tinggi | 8 | 2 |
+| US007 | Pencatatan pinjam & kembali | Sedang | 3 | 3 |
+| US008 | Lihat buku yang sedang dipinjam | Tinggi | 5 | 3 |
+| US009 | Notifikasi jatuh tempo | Tinggi | 5 | 3 |
+| US010 | Admin kelola anggota | 🔥 Sangat Tinggi | 8 | 4 |
+| US011 | Laporan bulanan | 🔥 Sangat Tinggi | 8 | 4 |
+| US012 | Riwayat pembayaran denda | Sedang | 3 | 4 |
+| US013 | Verifikasi denda offline | Tinggi | 5 | 5 |
+| US014 | Pengaturan tarif denda | Tinggi | 5 | 5 |
+
+---
+
+## 📝 Acceptance Criteria (AC)
+
+### **US001 – Pendaftaran Akun**
+- Input: nama, email, password, NISN  
+- Validasi email & password minimal 8 karakter  
+- Cek duplikasi email/NISN  
+- Jika valid → arahkan ke login  
+
+### **US002 – Login**
+- Validasi email & password  
+- Jika benar → masuk dashboard  
+- Jika salah → pesan error  
+- Tersedia “remember me”  
+- Logout aman  
+
+### **US003 – Pencarian Buku**
+- Cari berdasarkan judul/penulis  
+- Menampilkan status buku  
+- Jika tidak ada → tampilkan pesan “buku tidak tersedia”
+
+### **US004 – Peminjaman Buku**
+- Siswa harus login  
+- Cek ketersediaan buku  
+- Kurangi stok jika dipinjam  
+- Simpan tanggal pinjam & kembali  
+
+### **US006 – Kelola Buku**
+- CRUD lengkap  
+- Validasi input  
+- Konfirmasi saat menghapus  
+- Data diperbarui real-time
+
+### **US009 – Notifikasi Jatuh Tempo**
+- Email dikirim 2 hari sebelum jatuh tempo  
+- Email keterlambatan jika lewat waktu  
+- Berisi judul & batas pengembalian  
+
+### **US011 – Laporan Bulanan**
+- Menampilkan statistik bulanan  
+- Grafik + tabel  
+- Bisa diunduh PDF  
+- Khusus admin/pustakawan  
 
 ---
 
 ## 🛠 Teknologi yang Digunakan
 
-*Backend*
+### **Backend**
+- PHP 8.2+  
+- MySQL  
+- PDO  
+- Session Authentication  
 
-1. PHP 8.2+ - Bahasa pemrograman utama
-2. MySQL - Database management system
-3. PDO - Database connection dengan prepared statements
-4. Sessions - Manajemen autentikasi
+### **Frontend**
+- Bootstrap 5.3  
+- Vanilla JavaScript  
+- Font Awesome 6  
+- Custom CSS  
 
-*Frontend*
-
-1. Bootstrap 5.3 - Framework CSS responsive
-2. Font Awesome 6 - Icon library
-3. Vanilla JavaScript - Interaktivitas client-side
-4. Custom CSS - Styling tambahan
-
-*Security Features*
-
-1. CSRF Protection - Token security untuk semua form
-2. SQL Injection Prevention - Prepared statements
-3. XSS Protection - Input sanitization dengan htmlspecialchars()
-4. File Upload Security - Validasi type, size, dan content
-5. Password Hashing - Bcrypt password encryption
-6. Session Security - Regenerasi session ID
+### **Security Features**
+- CSRF Protection  
+- SQL Injection Prevention  
+- htmlspecialchars()  
+- Password Hashing (Bcrypt)  
+- Secure Session ID Regeneration  
 
 ---
 
 ## 🚀 Cara Menjalankan Aplikasi
 
-### Cara Instalasi
+### **1. Clone Repository**
 
-1. Clone repository:
+```bash
+git clone https://github.com/username/perpustakaan1.git
+cd perpustakaankita
 
-bash
-git clone https://github.com/nadhifpandyas/weddinglink.git
-
-
-2. Pindah ke direktori project:
-
-bash
-cd weddinglink
-
-
-3. Pastikan XAMPP/Laragon sudah terinstal
-
-### Cara Konfigurasi
+### **Cara Konfigurasi**
 
 1. Import database:
 
-   * Buka phpMyAdmin (http://localhost/phpmyadmin)
-   * Buat database baru bernama weddinglink
-   * Import file weddinglink.sql yang ada di folder project
+   * Buka phpMyAdmin (`http://localhost/phpmyadmin`)
+   * Buat database baru bernama `perpustakaankita`
+   * Import file `perpustakaankita.sql` yang ada di folder project
 
 2. Konfigurasi koneksi database:
 
-   * Buka file config.php
+   * Buka file `config.php`
    * Sesuaikan konfigurasi database:
 
-php
+```php
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'weddinglink');
+define('DB_NAME', 'perpustakaankita');
 define('DB_USER', 'root');
 define('DB_PASS', ''); 
-
-
-3. Konfigurasi folder uploads:
-
-   * Pastikan folder uploads/payments/ memiliki permission write
-   * Di Windows: Klik kanan folder → Properties → Security → Edit permissions
-   * Di Linux: chmod 755 uploads/payments/
+```
 
 ### Cara Menjalankan (Run Project)
 
-1. Start Apache dan MySQL di XAMPP/WAMP
-2. Letakkan folder project di htdocs (XAMPP) atau www (WAMP)
+1. Start Apache dan MySQL di XAMPP/WAMP/Laragon
+2. Letakkan folder project di:
+   * `htdocs` (XAMPP)
+   * `www` (WAMP)
+   * `C:\laragon\www\` (Laragon)
 3. Buka browser dan akses:
 
-
-http://localhost/weddinglink/
-
+http://localhost/perpustakaankita/
+```
 
 atau
 
-
-http://localhost/weddinglink/index.php
-
+```
+http://localhost/perpustakaankita/index.php
+```
 
 ---
 
 ## 🔑 Akun Demo
 
-*Admin:*
+**Admin:**
 
-* Username: admin@weddinglink.com
-* Password: password
+* Username: `demoadmin@gmail.com`
+* Password: `demoadmin123`
 
-*Vendor:*
+**Pustakawan:**
 
-* Username: foto@weddinglink.com
-* Password: password
+* Username: `demopustakawan@gmail.com`
+* Password: `pustakawan123`
 
-*Customer:*
+**Siswa:**
 
-* Username: customer@weddinglink.com
-* Password: password
+* Username: `demosiswa@gmail.com`
+* Password: `demosiswa123`
 
 ---
 
 ## 🌐 Link Deployment
 
-* *Website WeddingLink:* [https://weddinglink.ct.ws/](https://weddinglink.ct.ws/)
-* *Repository GitHub:* [https://github.com/nadhifpandyas/weddinglink.git](https://github.com/nadhifpandyas/weddinglink.git)
-* *Demo Video:* [Link YouTube Demo](https://youtu.be/IoTgQHpKeKY?si=oki_KbvHfjIHZJzp)
+* **Website Perpustakaankita:** [https://perpustakaankita.wuaze.com](https://perpustakaankita.wuaze.com)
+* **Repository GitHub:** [https://github.com/mhmdnafiz/perpustakaan1.git](https://github.com/mhmdnafiz/perpustakaan1.git)
+* **Demo Video:** [Link YouTube Demo](https://youtu.be/IoTgQHpKeKY?si=oki_KbvHfjIHZJzp)
 
 ---
 
@@ -170,19 +224,25 @@ http://localhost/weddinglink/index.php
 
 ### Halaman Login
 
-![Login Page](assets/login.png)
+<p align="center">
+  <img width="839" height="613" alt="Login Screenshot"
+       src="https://github.com/user-attachments/assets/877185e0-25d3-48b3-b1c0-9c8126dd4eeb" />
+</p>
 
 ### Dashboard Admin
 
-![Admin Dashboard](assets/dashboard.png)
+<p align="center">
+  <img width="1917" height="762" alt="Dashboard Screenshot"
+       src="https://github.com/user-attachments/assets/834d4252-9771-448d-9c78-816cb72900cb" />
+</p>
 
-### Daftar Paket
+### Kelola Anggota
 
-![Packages List](assets/packages.png)
+<p align="center">
+  <img width="1909" height="784" alt="Books Screenshot"
+       src="https://github.com/user-attachments/assets/53725d7a-cdfa-4b45-9a80-2390b91ca0b4" />
+</p>
 
-### Halaman Pemesanan
-
-![Order Page](assets/orders.png)
 
 ---
 
@@ -190,51 +250,46 @@ http://localhost/weddinglink/index.php
 
 ### Keterbatasan Sistem
 
-1. *Pembayaran:* Sistem hanya mendukung manual transfer dengan upload bukti, belum terintegrasi dengan payment gateway
-2. *Notifikasi:* Belum ada sistem notifikasi real-time (email/WhatsApp)
-3. *Mobile App:* Hanya tersedia versi web, belum ada aplikasi mobile
-4. *Multi-language:* Hanya tersedia dalam Bahasa Indonesia
+1. **Pembayaran:** Sistem hanya mendukung manual datang ke perpus belum terintegrasi dengan payment gateway
+2. **Mobile App:** Hanya tersedia versi web, belum ada aplikasi mobile
+3. **Multi-language:** Hanya tersedia dalam Bahasa Indonesia
 
 ### Fitur yang Belum Selesai
 
-1. ❌ Sistem rating dan review untuk vendor
-2. ❌ Fitur chat antara customer dan vendor
-3. ❌ Export laporan ke format PDF/Excel
-4. ❌ Calendar view untuk booking
-5. ❌ Integrasi dengan Google Maps untuk lokasi vendor
+1. ❌ Sistem rating dan review untuk buku
+2. ❌ Tampilan gambar sampul buku
 
 ### Petunjuk Penggunaan Khusus
 
-1. *Untuk Vendor:* Setelah registrasi, tunggu verifikasi dari admin sebelum dapat menambahkan paket
-2. *Upload Bukti Bayar:* Hanya menerima file JPG/PNG maksimal 2MB
-3. *Status Order:*
+1. **Untuk siswa:** Setelah meminjam buku / atau mengajukan peminjaman, tunggu verifikasi dari admin atau pustakawan sebelum dapat mengambil buku
+2. **Status Peminjaman:**
 
-   * Pending: Menunggu konfirmasi vendor
-   * Confirmed: Dikonfirmasi vendor
-   * In Progress: Sedang diproses
-   * Completed: Selesai
-   * Cancelled: Dibatalkan
-4. *Demo Data:* Database sudah include sample data untuk testing
+   * **Pending:** Menunggu konfirmasi pustakawan atau admin  
+   * **Confirmed:** Peminjaman dikonfirmasi oleh pustakawan/admin  
+   * **In Progress:** Siswa dapat mengambil buku di perpustakaan  
+   * **Borrowed:** Buku sedang dipinjam oleh siswa  
+   * **Completed:** Buku sudah dikembalikan dan transaksi selesai  
+   * **Cancelled:** Peminjaman dibatalkan
+3.. **Demo Data:** Database sudah include sample data untuk testing
 
 ### Troubleshooting
 
-1. *Error koneksi database:* Pastikan MySQL berjalan dan konfigurasi di config.php benar
-2. *Upload gagal:* Cek permission folder uploads/payments/
-3. *Halaman blank:* Cek error log di logs/error.log atau aktifkan error reporting di config.php
-4. *Login gagal:* Pastikan menggunakan akun demo yang benar atau reset password melalui phpMyAdmin
+1. **Error koneksi database:** Pastikan MySQL berjalan dan konfigurasi di config.php benar
+2. **Halaman blank:** Cek error log di `logs/error.log` atau aktifkan error reporting di config.php
+3. **Login gagal:** Pastikan menggunakan akun demo yang benar atau reset password melalui phpMyAdmin
 
 ---
 
 ## 📚 Keterangan Tugas
 
-Project ini dibuat untuk memenuhi *Tugas Final Project Mata Kuliah Rekayasa Perangkat Lunak*
+Project ini dibuat untuk memenuhi **Tugas Final Project Mata Kuliah Rekayasa Perangkat Lunak**
 
-*Dosen Pengampu:*
+**Dosen Pengampu:**
 
-* *Nama:* Dila Nurlaila, M.Kom.
-* *Mata Kuliah:* Rekayasa Perangkat Lunak
-* *Program Studi:* Sistem Informasi
-* *Universitas:* UIN STS Jambi
+* **Nama:** Dila Nurlaila, M.Kom.
+* **Mata Kuliah:** Rekayasa Perangkat Lunak
+* **Program Studi:** Sistem Informasi
+* **Universitas:** UIN STS Jambi
 
 ---
 
@@ -251,18 +306,8 @@ Project ini dibuat untuk memenuhi *Tugas Final Project Mata Kuliah Rekayasa Pera
 
 1. ✅ Sistem login/register multi-role
 2. ✅ CRUD untuk semua entitas utama
-3. ✅ Sistem pembayaran dengan upload bukti
-4. ✅ Manajemen order dengan berbagai status
+4. ✅ Manajemen pinjaman buku dengan berbagai status
 5. ✅ Dashboard dengan statistik per role
 6. ✅ Responsive design
 
 ---
-
-## 📄 Lisensi
-
-© 2025 WeddingLink - Kelompok 9 RPL
-
----
-
-*Dibuat dengan ❤ oleh Kelompok 9 — WeddingLink Team*
->>>>>>> 44b5390 (mengedit readme)
